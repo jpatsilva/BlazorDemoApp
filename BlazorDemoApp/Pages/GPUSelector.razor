@@ -1,0 +1,19 @@
+﻿@page "/GPUSelector"
+
+<h3>GPUSelector</h3>
+
+<datalist></datalist>
+
+@foreach(string gpu in gpus)
+{
+	<ul>
+		<li>
+			"GPU: @gpu"
+		</li>
+	</ul>
+}
+
+@code 
+{
+	List<string> gpus = new List<string> { "gpuA", "gpuB", "gpuC", "gpuD" };
+}

@@ -1,0 +1,20 @@
+﻿@page "/"
+@using BlazorDemoApp.Models;
+@using Syncfusion.Blazor;
+@using Syncfusion.Blazor.Grids;
+
+<PageTitle>GPU Data Analysis Visualization</PageTitle>
+
+<h1>GPU Data Analysis Visualization</h1>
+
+<SfGrid TValue="GPU" AllowPaging="true" Toolbar="@(new List<string>() { "Add", "Edit", "Delete", "Cancel", "Update" })">
+	<GridEditSettings AllowAdding="true" AllowDeleting="true" Mode="EditMode.Dialog"></GridEditSettings>
+	<Syncfusion.Blazor.Data.SfDataManager Url="api/GPU" Adaptor="Adaptors.WebApiAdaptor"></Syncfusion.Blazor.Data.SfDataManager>
+	<GridColumns>
+		<GridColumn Field="Id" Width="120"></GridColumn>
+		<GridColumn Field="GPUName" Width="120"></GridColumn>
+		<GridColumn Field="MetricName" Width="120"></GridColumn>
+		<GridColumn Field="Expression" Width="120"></GridColumn>
+		<GridColumn Field="Description" Width="120"></GridColumn>
+	</GridColumns>
+</SfGrid>
